@@ -1,0 +1,46 @@
+const envs = {
+  development: {
+    type: process.env.DB_TYPE,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    extra: { charset: 'utf8_general_ci' },
+    synchronize: true,
+    logging: true,
+    entities: ['src/entity/**/*.ts'],
+    migrations: ['src/migration/*.ts'],
+    cli: { entitiesDir: 'src/entity', migrationsDir: 'src/migration' },
+  },
+  production: {
+    type: process.env.DB_TYPE,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    extra: { charset: 'utf8_general_ci' },
+    synchronize: false,
+    logging: false,
+    entities: ['build/entity/**/*.js'],
+    migrations: ['build/migration/*.js'],
+    cli: { entitiesDir: 'build/entity', migrationsDir: 'build/migration' },
+  },
+  test: {
+    type: process.env.DB_TYPE,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    synchronize: true,
+    logging: false,
+    dropSchema: true,
+
+    entities: ['src/entity/**/*.ts'],
+    cli: { entitiesDir: 'src/entity' },
+  },
+}
+
+module.exports = envs[process.env.NODE_ENV]
