@@ -2,6 +2,7 @@ module.exports = {
   env: {
     es6: true,
     node: true,
+    'jest/globals': true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -23,8 +24,5 @@ module.exports = {
   ],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
-  },
-  env: {
-    'jest/globals': true,
   },
 }
