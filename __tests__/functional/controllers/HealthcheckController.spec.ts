@@ -14,5 +14,5 @@ it('should return app name on healthcheck route', async () => {
 
   expect(status).toBe(200)
   expect(body).toHaveProperty('appName')
-  expect(body.appName).toBe('financial-transaction-api')
+  expect(body.appName).toBe('financial-transactions-api')
 })
