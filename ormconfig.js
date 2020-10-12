@@ -7,7 +7,7 @@ const envs = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
     extra: { charset: 'utf8_general_ci' },
-    synchronize: true,
+    synchronize: false,
     logging: true,
     entities: ['src/entity/**/*.ts'],
     migrations: ['src/migration/*.ts'],
