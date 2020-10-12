@@ -3,7 +3,7 @@ version: '3.7'
 services:
   cli:
     build:
-      context: .
+      context: ./docker
       dockerfile: dev.Dockerfile
     user: '1000'
     command: bash
