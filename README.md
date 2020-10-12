@@ -29,6 +29,17 @@ docker-compose up
 # Then open http://localhost:4000
 ```
 
+## Migrations
+- Run migrations
+```bash
+yarn docker:migration:run
+```
+
+- Generate new migration
+```bash
+yarn docker:migration:generate MigrationName
+```
+
 ## Run commands
 
 ```bash
