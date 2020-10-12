@@ -1,7 +1,7 @@
-import * as express from 'express'
-import * as cors from 'cors'
-import * as bodyParser from 'body-parser'
-import * as responseTime from 'response-time'
+import express from 'express'
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import responseTime from 'response-time'
 import { createConnection, Connection } from 'typeorm'
 
 import routes from './routes'
