@@ -1,0 +1,45 @@
+{
+  "name": "financial-transactions-api",
+  "version": "1.0.0",
+  "repository": "git@github.com:matheus-rib/financial-transactions-api.git",
+  "author": "Matheus Ribeiro <matt.ribeiro14@outlook.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.14",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.5.3",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2",
+    "supertest": "^5.0.0",
+    "ts-jest": "^26.4.1",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "test": "jest --maxWorkers=1 --bail",
+    "dev:api": "nodemon --watch 'src/' --exec \"ts-node src/server.ts\" -e ts",
+    "docker:test": "docker-compose -p api-test -f docker-compose-test.yml run --rm test",
+    "typeorm-ts": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "build": "rm -rf build && tsc",
+    "pro:server": "node build/server.js",
+    "docker:migration:run": "docker-compose -f docker-compose-cli.yml run --rm cli yarn typeorm-ts migration:run",
+    "docker:migration:generate": "docker-compose -f docker-compose-cli.yml run --rm cli yarn typeorm-ts migration:generate -- -n"
+  },
+  "dependencies": {
+    "pg": "^8.4.1",
+    "typeorm": "^0.2.28"
+  }
+}

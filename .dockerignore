@@ -1,0 +1,17 @@
+.git/
+src/
+__tests__/
+docs/
+data/
+coverage/
+.env
+.env.test
+.env.example
+.editorconfig
+README.md
+Dockerfile
+docker-compose.yml
+docker-compose-cli.yml
+docker-compose-test.yml
+jest.config.js
+tsconfig.json

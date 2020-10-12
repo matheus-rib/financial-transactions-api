@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: ./docker
+      dockerfile: dev.Dockerfile
+    command: ["yarn", "dev:api"]
+    env_file: .env
+    ports:
+      - 4000:80
+    volumes:
+      - ./:/app
+    working_dir: /app
+    links:
+      - db
+  db:
+    image: paliari/postgres-postgis:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: financial-transactions
+    ports:
+      - 5432:5432
+    volumes:
+      - financial-transactions-postgres:/var/lib/postgresql/data
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+
+volumes:
+  financial-transactions-postgres:
+    
