@@ -1,0 +1,82 @@
+_type: export
+__export_format: 4
+__export_date: 2020-10-12T17:57:52.996Z
+__export_source: insomnia.desktop.app:v2020.4.1
+resources:
+  - _id: req_a2cb006d05884c288e10be6ead7cfd4b
+    parentId: wrk_0999259f3f4e4252b127d82579c4d4bf
+    modified: 1602525440268
+    created: 1602525367781
+    url: "{{ baseUrl }}"
+    name: Healthcheck
+    description: |-
+      Return app name
+
+      Response example:
+      ```json
+      {
+        "appName": "financial-transaction-api"
+      }
+      ```
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1602525367781
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_0999259f3f4e4252b127d82579c4d4bf
+    parentId: null
+    modified: 1602525362270
+    created: 1602525362270
+    name: Financial Transactions
+    description: ""
+    scope: null
+    _type: workspace
+  - _id: env_4af95ec00042dec278722cf04e007a3d3cd2d2e5
+    parentId: wrk_0999259f3f4e4252b127d82579c4d4bf
+    modified: 1602525362427
+    created: 1602525362427
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1602525362427
+    _type: environment
+  - _id: jar_4af95ec00042dec278722cf04e007a3d3cd2d2e5
+    parentId: wrk_0999259f3f4e4252b127d82579c4d4bf
+    modified: 1602525362431
+    created: 1602525362431
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_b71afc9498014f2e833593f54012bbb7
+    parentId: wrk_0999259f3f4e4252b127d82579c4d4bf
+    modified: 1602525362277
+    created: 1602525362277
+    fileName: Financial Transactions
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_1216349de9834a36ba509cb97a49e718
+    parentId: env_4af95ec00042dec278722cf04e007a3d3cd2d2e5
+    modified: 1602525398996
+    created: 1602525376189
+    name: Dev
+    data:
+      baseUrl: http://localhost:4000
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1602525376189
+    _type: environment

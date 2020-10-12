@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>16</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>416</y>
+      <w>336</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>Person
+--
+id: int(unsigned)
+createdAt: datetime
+updatedAt: datetime
+username: string
+email: string
+password: string
+wallet: Wallet</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>768</x>
+      <y>432</y>
+      <w>336</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Wallet
+--
+id: int(unsigned)
+createdAt: datetime
+updatedAt: datetime
+person: Person
+transactions: Transaction[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1328</x>
+      <y>432</y>
+      <w>512</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Transaction
+--
+id: int(unsigned)
+createdAt: datetime
+updatedAt: datetime
+label: string
+value: int(unsigned)
+transactionType: Enum&lt;TransactionType&gt;
+wallet: Wallet</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>512</y>
+      <w>240</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1088</x>
+      <y>512</y>
+      <w>272</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1472</x>
+      <y>320</y>
+      <w>224</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+TransactionType
+--
+- income
+- expense</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1568</x>
+      <y>400</y>
+      <w>48</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>
